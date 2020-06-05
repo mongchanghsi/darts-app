@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html, body{
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Global CSS */
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.remove-deco {
+  text-decoration: none !important;
+}
+
+.hor-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  color: red;
+}
+
+.padding-top {
+  padding-top: 20px;
+}
+
+.ver-line{
+  height: 70vh;
+  background-color: black;
+  width: 2px;
+}
+
+/* Mobile CSS */
+.logo-resize {
+  width: 12vw;
+}
+
+.page-space {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.gif-resize {
+  width: 30vw;
+}
+
+.player-container {
+  color: white;
+  padding: 10px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width: 10vw;
+  background-color: #343a40;
+}
+
+.player-container2 {
+  color: white;
+  background-color: #343a40;
+  padding: 7px;
+}
+
+.large-score {
+  font-size: 200px;
+}
+
+.mark-resize {
+  width: 3vw;
+}
+
+.mini-mark{
+  width: 3vw;
+}
+
+.mark-button {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+.padding-bottom {
+  padding-bottom: 1vw;
+}
