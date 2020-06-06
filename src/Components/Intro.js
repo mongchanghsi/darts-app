@@ -19,6 +19,7 @@ class Intro extends Component {
         </div>
 
         <p className='justify'> Welcome to Darts Scoreboard, a web-application for your ease of tracking your score for your darts game! My motivation for creating this web-application is because I do not own an electronic dartboard but rather the competitive version hence I had a hard time keep track my score while I'm practising! </p>
+        <p className='justify'> Currently, this is highly recommended to be played using a PC or Tablet in Landscape mode! Please look forward to future updates where you can use your mobile and play! </p>
         <Link to='/setup'><button type='button' className='btn btn-dark'> Let's Start! </button></Link>
       </div>
     );

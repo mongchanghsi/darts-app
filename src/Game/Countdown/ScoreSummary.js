@@ -5,8 +5,8 @@ class ScoreSummary extends Component {
   render(){
     return(
       <div className='row padding-top'>
-        <div className='col-12 col-md-3 col-lg-3'>
-          <div className='player-container'>
+        <div className='col-md-3 col-lg-3'>
+          <div className='player-container2'>
             { this.props.currentPlayer === 1 ?
             <h4 className='error'> Your Turn! </h4> : null }
             <h4> {this.props.players[0].name} </h4>
@@ -14,9 +14,9 @@ class ScoreSummary extends Component {
           </div>
         </div>
 
-        <div className='col-12 col-md-3 col-lg-3'>
+        <div className='col-md-3 col-lg-3'>
           { this.props.totalPlayers >= 2 ?
-            <div className='player-container'>
+            <div className='player-container2'>
               { this.props.currentPlayer === 2 ?
               <h4 className='error'> Your Turn! </h4> : null }
               <h4> {this.props.players[1].name} </h4>
@@ -24,9 +24,9 @@ class ScoreSummary extends Component {
             </div> : null }
         </div>
 
-        <div className='col-12 col-md-3 col-lg-3'>
+        <div className='col-md-3 col-lg-3'>
           { this.props.totalPlayers >= 3 ?
-            <div className='player-container'>
+            <div className='player-container2'>
               { this.props.currentPlayer === 3 ?
               <h4 className='error'> Your Turn! </h4> : null }
               <h4> {this.props.players[2].name} </h4>
@@ -34,9 +34,9 @@ class ScoreSummary extends Component {
             </div> : null }
         </div>
 
-        <div className='col-12 col-md-3 col-lg-3'>
+        <div className='col-md-3 col-lg-3'>
         { this.props.totalPlayers >= 4 ?
-          <div className='player-container'>
+          <div className='player-container2'>
             { this.props.currentPlayer === 4 ?
             <h4 className='error'> Your Turn! </h4>: null }
             <h4> {this.props.players[3].name} </h4>

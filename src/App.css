@@ -74,7 +74,7 @@ html, body{
 
 /* Mobile CSS */
 .logo-resize {
-  width: 12vw;
+  width: 60vw;
 }
 
 .page-space {
@@ -83,7 +83,7 @@ html, body{
 }
 
 .gif-resize {
-  width: 30vw;
+  width: 70vw;
 }
 
 .player-container {
@@ -105,12 +105,13 @@ html, body{
   font-size: 200px;
 }
 
+
 .mark-resize {
-  width: 3vw;
+  width: 10vw;
 }
 
 .mini-mark{
-  width: 3vw;
+  width: 15vw;
 }
 
 .mark-button {
@@ -120,4 +121,35 @@ html, body{
 
 .padding-bottom {
   padding-bottom: 1vw;
+}
+
+@media only screen and (min-width: 768px){
+  .logo-resize {
+    width: 15vw;
+  }
+
+  .gif-resize {
+    width: 30vw;
+  }
+
+  .mark-resize {
+    width: 5vw;
+  }
+
+  .mini-mark{
+    width: 3vw;
+    min-width: 30px;
+  }
+
+}
+
+@media only screen and (min-width 1024px){
+  .logo-resize {
+    width: 5vw;
+  }
+
+  .mark-resize {
+    width: 3vw;
+  }
+
 }
