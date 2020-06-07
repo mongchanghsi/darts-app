@@ -98,10 +98,8 @@ html, body{
 .player-container2 {
   color: white;
   background-color: #343a40;
-  padding: 7px;
-  min-width: 150px;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  padding: 5px;
+  min-width: 120px;
 }
 
 .large-score {
