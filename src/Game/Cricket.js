@@ -61,9 +61,9 @@ class Cricket extends Component {
     var newScore = oldPlayerScore + this.state.roundScore;
     let tempPlayersMark = [...this.state.players]
     tempPlayersMark[this.state.currentPlayer-1] = {...tempPlayersMark[this.state.currentPlayer-1], score: newScore, mpr: newMPR }
-    this.setState({ players: tempPlayersMark }, () => console.log(this.state.players))
+    this.setState({ players: tempPlayersMark }, () => this.checkEarlyEndGame())
 
-    // change player
+    // change player for round
     if (this.state.currentPlayer !== this.state.totalPlayers){
       this.setState({ currentPlayer: this.state.currentPlayer + 1}, () => console.log(`Round unchange, next player, ${this.state.currentPlayer}`))
     } else if (this.state.currentPlayer === this.state.totalPlayers){
@@ -133,7 +133,7 @@ class Cricket extends Component {
           }
       }
       var someName = 'show' + scoreName
-      if (closeCount === this.state.totalPlayers){
+      if (closeCount > 1 && closeCount === this.state.totalPlayers){
           this.setState(prevState => ({
             toClosed: {
               ...prevState.toClosed,
@@ -144,6 +144,37 @@ class Cricket extends Component {
 
     })
     this.setState({ clickedNum: this.state.clickedNum + 1, roundMark: this.state.roundMark + addMark }, () => console.log(this.state.clickedNum))
+  }
+
+  checkEarlyEndGame(){
+    // end game if player has closed everything and score is more than other players
+    // first, find the highest score amongst the player
+    var playerWithHighestScore;
+    var tempMaxScore = 0;
+    for(var i=0; i < this.state.totalPlayers; i++){
+      if (this.state.players[i].score > tempMaxScore){
+        tempMaxScore = this.state.players[i].score;
+        playerWithHighestScore = i
+      }
+    }
+    // secondly, using that player, find whether is this marks all closed
+    var playerWhoClosedEverything;
+    var tempTotalMark = 0;
+    for(var i=0; i < this.state.totalPlayers; i++){
+      var temp = this.state.players[i].mark
+      for(var x in temp){
+        if(temp[x] >= 3){
+          tempTotalMark++;
+        }
+      }
+      if (tempTotalMark === 7){
+        playerWhoClosedEverything = i
+      }
+      if (playerWhoClosedEverything === playerWithHighestScore && typeof(playerWhoClosedEverything) != 'undefined' ){
+        this.setState({ gameOver: true })
+      }
+      tempTotalMark = 0;
+    }
   }
 
   render(){
